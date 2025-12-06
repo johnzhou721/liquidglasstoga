@@ -18,10 +18,10 @@ class OptionScrollApp(toga.App):
         self.scroll_container = toga.ScrollContainer(content=scroll_box, flex=1)
 
         # Simple tab
-        other_box = toga.Box(style=Pack(direction=COLUMN, margin=8))
+        other_box = toga.Box(style=Pack(direction=COLUMN, margin=8, background_color="deepskyblue"))
         other_box.add(toga.Label("This is another tab."))
         other_box.add(toga.Button("Do something", on_press=self._on_do_something))
-        other_box2 = toga.Box(style=Pack(direction=COLUMN, margin=8))
+        other_box2 = toga.Box(style=Pack(direction=COLUMN, margin=8, background_color="deepskyblue"))
         other_box2.add(toga.Label("This is another tab."))
         other_box2.add(toga.Button("Do something", on_press=self._on_do_something))
 
@@ -31,13 +31,13 @@ class OptionScrollApp(toga.App):
         # Option container
         self.option_container = toga.OptionContainer(
             content=[
+                ("Simple", other_box),
                 ("Scrollable", toga.ScrollContainer(content=toga.Box(
                     children=[self.scroll_container, toga.Label("Additional Text")], direction=COLUMN
                 ))),
-                ("Simple", other_box),
                 ("Web", webview),  # New Web tab
                 ("Option", toga.OptionContainer(content=[
-                    ("Hello!", toga.Box(children=[toga.Label("World!")]))
+                    ("Hello!", toga.Box(children=[toga.Label("World!")], background_color="deepskyblue"))
                 ])),
                 ("Scrollable?", toga.ScrollContainer(content=toga.Box(
                     children=[toga.Label(
@@ -51,7 +51,7 @@ class OptionScrollApp(toga.App):
                 ), horizontal=False)),
                 ("Simple", other_box2),
             ],
-            style=Pack(flex=1),
+            style=Pack(flex=1, background_color="magenta"),
         )
 
         self.main_window.content = self.option_container
