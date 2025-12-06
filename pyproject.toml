@@ -167,9 +167,9 @@ requires = [
 # Mobile deployments
 [tool.briefcase.app.contadev.iOS]
 requires = [
-    "../toga/iOS",
-    "../toga/core",
-    "../toga/travertino",
+    "toga-iOS~=0.5.0",
+    # "../toga/core",
+    # "../toga/travertino",
     "std-nslog~=1.0.3",
 ]
 

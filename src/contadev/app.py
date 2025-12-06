@@ -28,24 +28,24 @@ class OptionScrollApp(toga.App):
         # Option container
         self.option_container = toga.OptionContainer(
             content=[
-#                ("Scrollable", toga.ScrollContainer(content=toga.Box(
-#                    children=[self.scroll_container, toga.Label("Additional Text")], direction=COLUMN
-#                ))),
+                ("Scrollable", toga.ScrollContainer(content=toga.Box(
+                    children=[self.scroll_container, toga.Label("Additional Text")], direction=COLUMN
+                ))),
                 ("Simple", other_box),
-#                ("Web", webview),  # New Web tab
+                ("Web", webview),  # New Web tab
                 ("Option", toga.OptionContainer(content=[
                     ("Hello!", toga.Box(children=[toga.Label("World!")]))
                 ])),
-#                ("Scrollable", toga.ScrollContainer(content=toga.Box(
-#                    children=[toga.Label(
-#                        "Additional Text\n" * 25
-#                                         )]
-#                ))),
-#                ("Actually Scrollable", toga.ScrollContainer(content=toga.Box(
-#                    children=[toga.Label(
-#                        "Additional Text\n" * 100
-#                                         )]
-#                ))),
+                ("Scrollable?", toga.ScrollContainer(content=toga.Box(
+                    children=[toga.Label(
+                        "Additional Text\n" * 25
+                                         )]
+                ))),
+                ("Scrollable!", toga.ScrollContainer(content=toga.Box(
+                    children=[toga.Label(
+                        "Additional Text\n" * 100
+                                         )]
+                ))),
             ],
             style=Pack(flex=1),
         )
