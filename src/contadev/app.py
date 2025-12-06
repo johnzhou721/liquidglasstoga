@@ -51,7 +51,7 @@ class OptionScrollApp(toga.App):
                 ), horizontal=False)),
                 ("Simple", other_box2),
             ],
-            style=Pack(flex=1, background_color="magenta"),
+            style=Pack(flex=1),
         )
 
         self.main_window.content = self.option_container
