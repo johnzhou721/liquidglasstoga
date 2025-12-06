@@ -21,6 +21,9 @@ class OptionScrollApp(toga.App):
         other_box = toga.Box(style=Pack(direction=COLUMN, margin=8))
         other_box.add(toga.Label("This is another tab."))
         other_box.add(toga.Button("Do something", on_press=self._on_do_something))
+        other_box2 = toga.Box(style=Pack(direction=COLUMN, margin=8))
+        other_box2.add(toga.Label("This is another tab."))
+        other_box2.add(toga.Button("Do something", on_press=self._on_do_something))
 
         # Web tab
         webview = toga.WebView(url="https://google.com")
@@ -45,7 +48,8 @@ class OptionScrollApp(toga.App):
                     children=[toga.Label(
                         "Additional Text\n" * 100
                                          )]
-                ))),
+                ), horizontal=False)),
+                ("Simple", other_box2),
             ],
             style=Pack(flex=1),
         )
