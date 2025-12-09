@@ -36,9 +36,7 @@ class OptionScrollApp(toga.App):
                     children=[self.scroll_container, toga.Label("Additional Text")], direction=COLUMN
                 ))),
                 ("Web", webview),  # New Web tab
-                ("Option", toga.OptionContainer(content=[
-                    ("Hello!", toga.Box(children=[toga.Label("World!")], background_color="deepskyblue"))
-                ])),
+                
                 ("Scrollable?", toga.ScrollContainer(content=toga.Box(
                     children=[toga.Label(
                         "Additional Text\n" * 25
@@ -50,6 +48,37 @@ class OptionScrollApp(toga.App):
                                          )]
                 ), horizontal=False)),
                 ("Simple", other_box2),
+                ("Option", toga.OptionContainer(
+                    content=[
+                        ("Hello!", toga.OptionContainer(
+                            content=[
+                                ("Hey!", toga.OptionContainer(
+                                    content=[
+                                        ("You still here!", toga.Box(
+                                            children=[
+                                                toga.ScrollContainer(
+                                                    content=toga.Box(
+                                                        children=[
+                                                            toga.Label(
+                                                                "Additional Text\n" * 100
+                                                            )
+                                                        ]
+                                                    ),
+                                                    flex=1
+                                                )
+                                            ],
+                                            background_color="deepskyblue",
+                                            margin_left=20,
+                                            direction=COLUMN,
+                                        ))
+                                    ]
+                                ))
+                            ]
+                        ))
+                    ]
+                )),
+
+
             ],
             style=Pack(flex=1),
         )
